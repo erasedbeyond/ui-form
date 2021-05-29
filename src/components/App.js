@@ -8,6 +8,7 @@ function App() {
     <div className="app">
       <Header/>
       <Main/>
+      <div id='background-design'></div>
     </div>
   );
 }

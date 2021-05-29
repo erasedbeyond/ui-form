@@ -15,6 +15,7 @@ class Main extends React.Component{
             month:'March',
             year:'1995',
             organisation:'',
+            customer:'',
             emailAlert:'',
             showEmailAlert:'hidden',
             passwordAlert:'',
@@ -89,15 +90,18 @@ class Main extends React.Component{
             alert("form SUBMITTED\n"
                 +"EMAIL: "+this.state.email+"\n"
                 +"DOB: "+this.state.date+this.state.month+this.state.year+"\n"
-                +(this.state.organisation && "ORGANISATION: "+this.state.organisation)
+                +(this.state.organisation && "ORGANISATION: "+this.state.organisation+"\n")
+                +(this.state.customer && "Already a customer: "+this.state.customer)
+                
             )
             this.setState({
                 email:'',
-                date:'3',
+                date:'03',
                 month:'march',
                 year:'1995',
                 organisation:'',
                 password:'',
+                customer:''
             })
             e.target.reset()
         }
@@ -105,7 +109,7 @@ class Main extends React.Component{
 
 
     render(){
-
+        console.log(this.state)
         return(
             <main className="main">
                 <form onSubmit={this.submit} noValidate>
@@ -154,17 +158,31 @@ class Main extends React.Component{
                         <input  type='password' name='password' onChange={this.setValues}/>
                     </section>
 
-                    <section>
-                        <h3 className='optional'>Are you an agency or individual?</h3>
+                    <section className='desktop-only'>
+                        <h3>Are you an agency or individual?</h3>
                        <div>
-                            <label>
+                            <label className='radio-option'>
                                 <input type='radio' value='individual' name='organisation' onChange={this.setValues}/>
                                 Individual
                             </label>
 
-                            <label>
+                            <label className='radio-option'>
                                 <input type='radio' value='agency' name='organisation' onChange={this.setValues}/>
                                 Agency
+                            </label>
+                       </div>
+                    </section>
+                    <section className='mobile-only'>
+                        <h3 className='optional'>Already using any of our products?</h3>
+                       <div>
+                            <label className='radio-option'>
+                                <input type='radio' value='yes' name='customer' onChange={this.setValues}/>
+                                Yes
+                            </label>
+
+                            <label className='radio-option'>
+                                <input type='radio' value='no' name='customer' onChange={this.setValues}/>
+                                No
                             </label>
                        </div>
                     </section>

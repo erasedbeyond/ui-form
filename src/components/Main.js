@@ -61,7 +61,7 @@ class Main extends React.Component{
 
         if(this.state.password===''){
             this.setState({
-                passwordAlert:"Please enter the password",
+                passwordAlert:"Please enter some password",
                 showPasswordAlert:'visible'
             })
             submit=false;

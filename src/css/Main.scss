@@ -160,10 +160,9 @@
 
 .alert {
     position: absolute;
-    width: 110px;
+    max-width: 124px;
     font-size: .7rem;
-    font-weight: 900;
-    right: -120px;
+    right: -130px;
     height: 35px;
     padding:.3rem;
     border-radius: 5px;

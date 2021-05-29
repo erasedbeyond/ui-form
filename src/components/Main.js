@@ -94,16 +94,16 @@ class Main extends React.Component{
                 +(this.state.customer && "Already a customer: "+this.state.customer)
                 
             )
+            e.target.reset()
             this.setState({
                 email:'',
                 date:'03',
-                month:'march',
+                month:'March',
                 year:'1995',
                 organisation:'',
                 password:'',
                 customer:''
             })
-            e.target.reset()
         }
     }
 

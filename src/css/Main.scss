@@ -40,6 +40,8 @@
         width: 100%;
         height: 35px;
         padding-left:10px;
+        border: 2px solid #BDBDBD;
+
         box-sizing: border-box;
         @media (max-width:600px) {
             height: 45px;
@@ -58,6 +60,18 @@
             label{
                 width: 50%;
             }
+        }
+    }
+
+    .visible{
+        & ~ input{
+            border-color:  #EB5757;
+        }
+    }
+    .hidden{
+        visibility: hidden;
+         & ~ input{
+            border-color: #BDBDBD;
         }
     }
 
@@ -80,7 +94,8 @@
                 text-indent: 5px;
                 box-sizing: border-box;
                 color: grey;
-                border: 2px solid rgba(128, 128, 128, 0.527);
+                // border: 2px solid rgba(194, 40, 40, 0.527);
+                border: 2px solid #BDBDBD;
                 background-color: transparent;
                 z-index: 1;
             }
@@ -141,17 +156,7 @@
 }
 
 
-.visible{
-    & ~ input{
-        border:2px solid #EB5757;
-    }
-}
-.hidden{
-    visibility: hidden;
-     & ~ input{
-        border: 2px solid grey;
-    }
-}
+
 
 .alert {
     position: absolute;
